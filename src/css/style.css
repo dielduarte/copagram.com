@@ -1,0 +1,171 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	overflow:hidden; 
+	background-image: url(../img/background.png);
+	font-family: 'sambaregular';
+	color:#fff;
+
+}
+
+
+.left {
+	float: left;
+}
+
+
+
+
+/*==============================================
+			IMPORT FONTS
+================================================*/
+
+@font-face {
+    font-family: 'robotolight';
+    src: url('../fonts/roboto-light-webfont.eot');
+    src: url('../fonts/roboto-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/roboto-light-webfont.woff') format('woff'),
+         url('../fonts/roboto-light-webfont.ttf') format('truetype'),
+         url('../fonts/roboto-light-webfont.svg#robotolight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'sambaregular';
+    src: url('../fonts/samba-webfont.eot');
+    src: url('../fonts/samba-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/samba-webfont.woff') format('woff'),
+         url('../fonts/samba-webfont.ttf') format('truetype'),
+         url('../fonts/samba-webfont.svg#sambaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+/*==============================================
+			TOP
+================================================*/
+
+.top {
+	height: 60px;
+	line-height: 60px;
+	padding-left: 65px;
+
+}
+
+
+
+/*==============================================
+			TEXT'S SIZE 
+================================================*/
+
+.bigtext {
+	font-size: 48px;
+}
+
+/*==============================================
+			MENU 
+================================================*/
+.menu {
+	display: block;
+	width: 200px;
+	margin: 0 auto;
+	height: 60px;
+	line-height: 50px;
+	font-size: 24px;
+	color:#18682f;
+}
+
+.menu >  li{
+	list-style: none;
+	display: inline-block;
+	height: 60px;
+	margin-right: 10px;
+	border-top: 5px solid transparent;
+	-webkit-transition: border-top 0.1s linear,color 0.1s linear; 
+    transition: border-top 0.1s linear ,color 0.1s linear;
+}
+
+
+.menu >  li:hover{
+	border-top: 5px solid #fff;
+	cursor: pointer;
+	color:#fff;
+}
+
+.col-sm-2, .col-sm-4{
+	padding:0;
+	
+}
+
+/*==============================================
+			TRANSPARENTS BACKGROUNDS 
+================================================*/
+
+.bg-green {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 99;
+	background-color: #129d49;
+	opacity: 0.7;
+    -webkit-transition: opacity 0.1s linear; 
+    transition: opacity 0.1s linear;
+}
+
+
+.bg-yellow {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 99;
+	background-color: #f2e015;
+	opacity: 0.7;
+}
+
+
+.bg-green:hover {
+	opacity: 0;
+}
+
+
+/*==============================================
+		     FOOTER
+================================================*/
+
+.footer {
+	text-align: center;
+	font-family: 'robotolight';
+	font-size: 15px;
+	clear: both;
+	height: 80px;
+	line-height: 80px;
+}
+
+
+.hastag {
+	font-family: 'sambaregular';
+	color: #f2e015;
+	font-size: 25px;
+}
+
+.nick {
+	color: #fff;
+	position: absolute;
+	z-index: 99;
+	margin-top: -30px;
+	display: none;
+}
+
+.bg-green:hover > .nick {
+	display: block;
+}
