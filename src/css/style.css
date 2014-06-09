@@ -6,7 +6,7 @@
 body {
 	width: 100%;
 	height: 100%;
-	overflow:hidden; 
+	overflow:none; 
 	background-image: url(../img/background.png);
 	font-family: 'sambaregular';
 	color:#fff;
@@ -108,6 +108,27 @@ body {
 }
 
 /*==============================================
+			DEFAULT COLUNS AND IMAGES 
+================================================*/
+
+.defaultimg {
+	width:100%;
+	height:330px;
+}
+
+.bigheight {
+	height: 360px;
+}
+
+.negativemargintop {
+	margin-top: 0px;
+}
+
+
+.maxmarginleft ,.midmarginleft ,.minmarginleft {
+	margin-left: 0%;
+}
+/*==============================================
 			TRANSPARENTS BACKGROUNDS 
 ================================================*/
 
@@ -133,7 +154,7 @@ body {
 }
 
 
-.bg-green:hover {
+.bg-green:hover ,.bg-yellow:hover {
 	opacity: 0;
 }
 
@@ -166,6 +187,42 @@ body {
 	display: none;
 }
 
-.bg-green:hover > .nick {
-	display: block;
+/*==============================================
+		responsive media
+================================================*/
+
+@media ( min-width : 768px ) {
+
+	body {
+		overflow:hidden; 
+		width: 100%;
+		height:100%;
+	}
+
+	.defaultimg {
+		width:100%;
+		height:180px;
+	}
+
+	.bigheight {
+		height: 360px;
+	}
+
+	.negativemargintop {
+		margin-top: -180px;
+	}
+
+	.minmarginleft {
+		margin-left: 12.5%;
+	}
+
+
+	.midmarginleft {
+		margin-left: 25%;
+	}
+
+	.maxmarginleft {
+		margin-left: 37.5%;
+	}
+
 }
