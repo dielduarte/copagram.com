@@ -13,9 +13,23 @@ body {
 
 }
 
+a , a:hover{
+	text-decoration: none;
+	color: #18682f;
+}
+
 
 .left {
 	float: left;
+}
+
+.yellow {
+	color: #f2e015;
+}
+
+
+.modal {
+	display: block;
 }
 
 
@@ -85,7 +99,7 @@ body {
 	color:#18682f;
 }
 
-.menu >  li{
+.menu >  li {
 	list-style: none;
 	display: inline-block;
 	height: 60px;
@@ -96,13 +110,17 @@ body {
 }
 
 
-.menu >  li:hover{
+.menu >  li:hover {
 	border-top: 5px solid #fff;
 	cursor: pointer;
 	color:#fff;
 }
 
-.col-sm-2, .col-sm-4{
+.menu >  li:hover a {
+	color:#fff;
+}
+
+.col-sm-2, .col-sm-4 {
 	padding:0;
 	
 }
@@ -115,6 +133,9 @@ body {
 	width:100%;
 	height:330px;
 }
+
+
+
 
 .bigheight {
 	height: 360px;
@@ -179,17 +200,59 @@ body {
 	font-size: 25px;
 }
 
-.nick {
-	color: #fff;
+/*==============================================
+		RANK
+================================================*/
+.colrank {
+	margin-top:0;
+}
+
+.colrankleft {
+	margin-left: 0%;
+}
+
+.number {
 	position: absolute;
 	z-index: 99;
+	font-size: 2em;
+}
+
+.number, .numbermid {
+	margin-left: 93%;
+}
+
+.nick, .likes {
+	color: #fff;
+	z-index: 99;
+	margin-left: 10px;
+	display: block;
+	font-family: 'robotolight';	
+}
+
+.nick {
+	position: absolute;
+	font-size: 24px;
+	margin-top: -35px;
+}
+
+.likes {
+	position: relative;
+	float: right;
+	font-size: 18px;
+	margin-right: 10px;
 	margin-top: -30px;
-	display: none;
 }
 
 /*==============================================
 		responsive media
 ================================================*/
+@media ( max-width : 480px ) {
+
+	.number, .numbermid {
+		margin-left: 84%;
+	}
+
+}
 
 @media ( min-width : 768px ) {
 
@@ -225,4 +288,54 @@ body {
 		margin-left: 37.5%;
 	}
 
+	.colrank {
+		margin-top: 7.3%;
+	}
+
+	.colrankleft {
+		margin-left: 25%;
+	}
+	
+	.number {
+		margin-left: 82%;
+	}
+
+	.numbermid {
+		margin-left:60%;
+	}
+
 }
+
+@media ( min-width : 868px ) {
+
+	.number {
+		margin-left: 84%;
+	}
+
+	.numbermid {
+		margin-left:65%;
+	}
+}
+
+@media ( min-width : 1020px ) {
+	.number {
+		margin-left: 86%;
+	}
+
+	.numbermid {
+		margin-left:70%;
+	}
+}
+
+@media ( min-width : 1300px ) {
+	.number {
+		margin-left: 88%;
+	}
+	.numbermid {
+		margin-left:76%;
+	}
+}
+
+
+
+
