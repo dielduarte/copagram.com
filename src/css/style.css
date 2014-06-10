@@ -32,9 +32,7 @@ a , a:hover{
 }
 
 
-.modal {
-	display: block;
-}
+
 
 
 
@@ -90,12 +88,16 @@ a , a:hover{
 	font-size: 48px;
 }
 
+.bigtext a{
+	color: #fff;
+}
+
 /*==============================================
 			MENU 
 ================================================*/
 .menu {
 	display: block;
-	width: 200px;
+	width: 277px;
 	margin: 0 auto;
 	height: 60px;
 	line-height: 50px;
@@ -281,6 +283,45 @@ a , a:hover{
 }
 
 /*==============================================
+		ABOUT MODAL
+================================================*/
+.aboutmodal {
+	width: 500px;
+	margin: 0 auto;
+	text-align: center;
+	margin-top: 5%;
+}
+
+.aboutmodal > .bigtext {
+	color: #119c49;
+	font-size: 70px;
+}
+
+.btnok {
+	display: inline-block;
+	width: 140px;
+	height: 45px;
+	line-height: 45px;
+	border:1px solid #119c49;
+	border-radius: 40px;
+	font-size: 30px;
+	color:#119c49; 
+	margin-top: 5%;
+}
+
+.btnok:hover {
+	border:1px solid #FFF;
+	color: #fff;
+}
+
+.textabout {
+	width: 500px;
+	margin: 0 auto;
+	text-align: justify;
+	font-family: 'robotolight';
+}
+
+/*==============================================
 		responsive media
 ================================================*/
 @media ( max-width : 480px ) {
@@ -288,7 +329,17 @@ a , a:hover{
 	.number, .numbermid {
 		margin-left: 84%;
 	}
+}
 
+@media ( max-width : 520px ) {
+
+
+	
+	.aboutmodal, .textabout {
+		width: 100%;
+	}
+
+	.textabout {padding: 10px;}
 }
 
 @media ( min-width : 768px ) {
@@ -372,7 +423,6 @@ a , a:hover{
 		margin-left:76%;
 	}
 }
-
 
 
 

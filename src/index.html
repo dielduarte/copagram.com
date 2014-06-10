@@ -6,20 +6,20 @@
 
 	<!-- CSS IMPORT-->
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
-	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/responsive.16col.css">
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 	<div class="row">
 		<div class="top col-sm-12">
-			<div class="bigtext left">Copagram</div>
-			
+			<div class="bigtext left"><a href="index.html">Copagram</a></div>
 				<ul class="menu">
 					<li><a href="index.html">Mural</a></li>
 					<li><a href="rank.html">rank</a></li>
-					<li><a href="#">sobre</a></li>
+					<li><a href="rank.html">Parceiros</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#aboutModal">sobre</a></li>
 				</ul>
 		</div>
 	</div>
@@ -235,11 +235,20 @@
 		Use as hastags <span class="hastag">#COPAGRAM, #WORLDCUP2014 </span> ou <span class="hastag">#COPADOMUNDO2014</span> apareça no nosso mural e concorra a <span class="hastag">#PREMIOS!</span>
 		</p>
 	</div>
-	
+
+	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	 	<div class="aboutmodal">
+	 		<div class="bigtext">Copagram</div>
+			<p class="textabout">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, molestias, officiis similique accusantium natus officia minus soluta odio mollitia quasi! Asperiores officiis libero nisi pariatur veniam tenetur porro nulla sequi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, molestias, officiis similique accusantium natus officia minus soluta odio mollitia quasi! Asperiores officiis libero nisi pariatur veniam tenetur porro nulla sequi.</p>
+	 		<a href="#" data-dismiss="modal" class="btnok">OK</a>
+	 	</div>
+	</div>
 
 
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	<script src="js/respond.min.js"></script>
 
-	<script src="respond.min.js"></script>
 
 
 </body>
