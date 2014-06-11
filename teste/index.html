@@ -79,7 +79,7 @@
 				}
 
 
-
+							
 				for (var i = 0; i < settings.images_to_fetch; i++) {
 					
 					var loader = '<img class="loader-'+i+'" >';
@@ -88,14 +88,20 @@
 
 					var id = "#" + i;
 
-					alert(id);	
-					$(loader).attr('src', url).appendTo('body').load(function(){
+					
+							//$(loader).attr('src', url).appendTo('body').load(function(){
 
-				    		$("#0").fadeOut(600, function(){
-				    			$("#0").attr('src', url);
+				    			//$('id).fadeOut(600, function(){
+				    				
+				    				
+				    				$(id).attr('src', url);
 
-				    		}).fadeIn();				
-						});
+
+				    			//}).fadeIn();	
+
+		
+						//	});
+					
 				}
 
 			}
