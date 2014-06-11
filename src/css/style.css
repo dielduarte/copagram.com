@@ -96,7 +96,7 @@ a , a:hover{
 			MENU 
 ================================================*/
 .menu {
-	display: block;
+	display: none;
 	width: 277px;
 	margin: 0 auto;
 	height: 60px;
@@ -129,6 +129,15 @@ a , a:hover{
 .col-sm-2, .col-sm-4 {
 	padding:0;
 	
+}
+/*==============================================
+		RESPONSIVE MENU 
+================================================*/
+
+.responsivemenu {
+	float: right;
+	margin-right: 10px;
+	display: block;
 }
 
 /*==============================================
@@ -321,6 +330,11 @@ a , a:hover{
 	font-family: 'robotolight';
 }
 
+
+.imgparceiros {
+	width: 170px;
+	margin-right: 30px;
+}
 /*==============================================
 		responsive media
 ================================================*/
@@ -391,6 +405,15 @@ a , a:hover{
 	.numbermid {
 		margin-left:60%;
 	}
+
+	.menu {
+		display: block;
+	}
+	
+	.responsivemenu {
+		display: none;
+	}
+
 
 }
 
