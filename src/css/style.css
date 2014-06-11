@@ -27,10 +27,6 @@ a , a:hover{
 	color: #f2e015;
 }
 
-.none {
-	display: none;
-}
-
 
 
 
@@ -140,6 +136,23 @@ a , a:hover{
 	display: block;
 }
 
+.submenu {
+	width: 30%;
+	background-image: url('../img/background.png');
+	position: absolute;
+	z-index: 100;
+	margin-top: 64px;
+	right: 0;
+	margin-right: 25px;
+	font-size: 20px;
+	display: none;
+}
+
+.submenu >  li {
+	list-style: none;
+	width: 100%;
+	text-align:center;
+}
 /*==============================================
 			DEFAULT COLUNS AND IMAGES 
 ================================================*/
@@ -174,7 +187,7 @@ a , a:hover{
 	position: absolute;
 	z-index: 99;
 	background-color: #129d49;
-	opacity: 0.7;
+	opacity: 0.6;
     -webkit-transition: opacity 0.1s linear; 
     transition: opacity 0.1s linear;
 }
@@ -186,7 +199,7 @@ a , a:hover{
 	position: absolute;
 	z-index: 99;
 	background-color: #f2e015;
-	opacity: 0.7;
+	opacity: 0.6;
 }
 
 
@@ -215,42 +228,12 @@ a , a:hover{
 	font-size: 25px;
 }
 
-/*==============================================
-		DESCRIPTION IMAGES MURAL
-================================================*/
-.nickmural, .likesmural {
-	color: #fff;
-	z-index: 99;
-	margin-left: 4px;
-	font-family: 'robotolight';	
-}
 
-.nickmural {
-	position: absolute;
-	font-size: 24px;
-	margin-top: -30px;
-}
-
-.nicknamemin {
-	font-size: 15px;
-	font-family: 'robotolight';
-}
-
-.likesmural {
-	position: relative;
-	float: right;
-	font-size: 12px;
-	margin-right: 2px;
-	margin-top: -18px;
-}
-
-.fotomural:hover .none {
-	display: block;
-}
 /*==============================================
 		RANK
 ================================================*/
 .colrank {
+
 	margin-top:0;
 }
 
@@ -291,6 +274,34 @@ a , a:hover{
 	margin-top: -30px;
 }
 
+/*==============================================
+		DESCRIPTION IMAGES MURAL
+================================================*/
+.nickmural, .likesmural {
+	color: #fff;
+	z-index: 99;
+	margin-left: 4px;
+	font-family: 'robotolight';	
+}
+
+.nickmural {
+	position: absolute;
+	font-size: 24px;
+	margin-top: -30px;
+}
+
+
+.likesmural {
+	position: relative;
+	float: right;
+	font-size: 18px;
+	margin-right: 10px;
+	margin-top: -25px;
+}
+
+.fotomural:hover .none {
+	display: block;
+}
 /*==============================================
 		ABOUT MODAL
 ================================================*/
@@ -335,9 +346,22 @@ a , a:hover{
 	width: 170px;
 	margin-right: 30px;
 }
+
+
+
+.block {
+	display: block;
+}
+
 /*==============================================
 		responsive media
 ================================================*/
+@media ( max-width : 304px ) {
+	
+	.submenu {
+		margin-top: 124px;
+	}
+}
 @media ( max-width : 480px ) {
 
 	.number, .numbermid {
@@ -364,6 +388,9 @@ a , a:hover{
 		height:100%;
 	}
 
+	.none {
+		display: none;
+	}
 	.defaultimg {
 		width:100%;
 		height:180px;
@@ -410,11 +437,19 @@ a , a:hover{
 		display: block;
 	}
 	
-	.responsivemenu {
+	.responsivemenu, .submenu {
 		display: none;
 	}
 
+	.nicknamemin {
+		font-size: 15px;
+	}
 
+	.likesmural {
+		font-size: 12px;
+		margin-right: 2px;
+		margin-top: -18px;
+	}
 }
 
 @media ( min-width : 868px ) {

@@ -22,6 +22,16 @@
 					<li><a href="rank.html">Parceiros</a></li>
 					<li><a href="#" data-toggle="modal" data-target="#aboutModal">sobre</a></li>
 				</ul>
+
+				<div class="responsivemenu">
+					<a href="#" class="btnresponsivemenu"><img src="img/menu.png" alt=""></a>	
+				</div>
+				<ul class="submenu">
+					<li><a href="index.html">Mural</a></li>
+					<li><a href="rank.html">rank</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#parceirosModal">Parceiros</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#aboutModal">sobre</a></li>
+				</ul>
 		</div>
 	</div>
 
@@ -60,8 +70,19 @@
 	
 
 
-
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="js/respond.min.js"></script>
+			<script>
+			$('.responsivemenu').click(function(){
+				if($('.submenu').hasClass('block')){
+					$('.submenu').removeClass('block');
+				} 
+				else {	
+					$('.submenu').addClass('block')
+				}
+			});
+
+		</script>
 
 
 </body>

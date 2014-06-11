@@ -23,8 +23,15 @@
 				</ul>
 
 				<div class="responsivemenu">
-					<a href="" class="btnresponsivemenu"><img src="img/menu.png" alt=""></a>	
+					<a href="#" class="btnresponsivemenu"><img src="img/menu.png" alt=""></a>	
 				</div>
+				<ul class="submenu">
+					<li><a href="index.html">Mural</a></li>
+					<li><a href="rank.html">rank</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#parceirosModal">Parceiros</a></li>
+					<li><a href="#" data-toggle="modal" data-target="#aboutModal">sobre</a></li>
+				</ul>
+
 		</div>
 	</div>
 
@@ -261,6 +268,7 @@
 	<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>
 
+
 			<script src="http://code.stephenmorley.org/javascript/queues/Queue.js"></script>
 		
 		<script type="text/javascript">
@@ -359,7 +367,17 @@
 		});
 
 		</script>
+		<script>
+			$('.responsivemenu').click(function(){
+				if($('.submenu').hasClass('block')){
+					$('.submenu').removeClass('block');
+				} 
+				else {	
+					$('.submenu').addClass('block')
+				}
+			});
 
+		</script>
 
 
 
