@@ -37,9 +37,9 @@
 
 	<div class="col span_4 colrank colrankleft">
 		<div class="number yellow">#1</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg bigheight">
+		<img src="img/teste.jpg" alt="" class="defaultimg bigheight" id="0">
 		<div class="nick">
-			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;" id="0">
+			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;" >
 			<span class="nickname"></span>
 		</div>
 		<div class="likesmural none like0">
@@ -48,9 +48,9 @@
 	</div>
 	<div class="col span_2 colrank">
 		<div class="number numbermid">#2</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg">
+		<img src="img/teste.jpg" alt="" class="defaultimg" id="1">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="1">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like1">
@@ -58,9 +58,9 @@
 			</div>
 
 		<div class="number numbermid">#4</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg">
+		<img src="img/teste.jpg" alt="" class="defaultimg" id="2">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="2">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like2">
@@ -69,9 +69,9 @@
 	</div>
 	<div class="col span_2 colrank">
 		<div class="number numbermid">#3</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg">
+		<img src="img/teste.jpg" alt="" class="defaultimg" id="3">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="3">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like3">
@@ -79,9 +79,9 @@
 			</div>
 
 		<div class="number numbermid">#5</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg">
+		<img src="img/teste.jpg" alt="" class="defaultimg" id="4">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="4">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like4">
@@ -137,6 +137,7 @@
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>
 		<script type="text/javascript">
+
 			$('.responsivemenu').click(function(){
 				if($('.submenu').hasClass('block')){
 					$('.submenu').removeClass('block');
@@ -156,6 +157,7 @@
 			}
 
 			var imgs = new Array();
+			var newimg = new Array();
 
 			function loadPics()
 			{
@@ -167,14 +169,16 @@
 						data: {
 							access_token: null,
 							client_id: settings.client_id,
-							count: settings.images_to_fetch
+							count: 200
 						},
 						success: function(dados) {
 
 							var fotos = dados.data;
 
-							for (var i = 0; i < settings.images_to_fetch; i++) {
+							for (var i = 0; i < fotos.length; i++) {
 								
+								var foto = fotos[i];
+
 								var img = foto.images.standard_resolution.url;
 								var like = foto.likes.count;
 								var user = foto.user.username;
@@ -182,7 +186,26 @@
 
 								imgs.push({img: img, user: user, like: like, link: link});
 							}
-					}
+
+							order(imgs);
+
+							for(var i = 5; i > 0; i--){
+
+								var id     = "#"+ i;
+								var nick   = '.nm'+ i;
+								var	url    = '.url'+i;
+								var Nlikes = '.like'+i; 
+
+								alert(imgs[i].like);
+									    				
+								$(id).attr('src', imgs[i].img);
+								$(nick).text(imgs[i].user);
+								$(Nlikes).text(imgs[i].like + " Likes");
+								$(url).prop('href', imgs[i].link);
+								$(url).attr('target','_blank');
+
+							}
+						}
 				});
 
 				setTimeout(function() {
@@ -200,7 +223,7 @@
 
 			for (var i = 0; i < vet.length - 1; i++) {
 				
-				if (vet[i].like < a[i+1].like) {
+				if (vet[i].like > vet[i+1].like) {
                 
                 auxLink = vet[i].link;
                 auxUser = vet[i].user;
@@ -219,35 +242,14 @@
 			}
 		}
 
-
-		function showPics(){
-			
-			order(imgs);
-
-			for (var i = 0; i < imgs.length; i++) {
-				alert(imgs[i].like);
-			};
-
-			for(var i = 0; i < 5; i++){
-
-			var id     = "#"+ i;
-			var nick   = '.nm'+ i;
-			var	url    = '.url'+i;
-			var Nlikes = '.like'+i; 
-
-				    				
-			$(id).attr('src', imgs[i].img);
-			$(nick).text(imgs[i].user);
-			$(Nlikes).text(imgs[i].like + " Likes");
-			$(url).prop('href', imgs[i].link);
-			$(url).attr('target','_blank');
-
-			}
+		for(var i = 0; i < vet.length;i++){
+			alert(vet[i].like);
 		}
+	}
+
 
 		$(document).ready(function(){
 			loadPics();
-			showPics();
 		});
 
 	</script>
