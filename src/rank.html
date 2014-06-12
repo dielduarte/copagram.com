@@ -40,10 +40,10 @@
 		<img src="img/teste.jpg" alt="" class="defaultimg bigheight">
 		<div class="nick">
 			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;">
-			<span class="nickname">Davidluiz</span>
+			<span class="nickname"></span>
 		</div>
-		<div class="likes">
-			12022 Likes
+		<div class="likesmural none like0">
+			
 		</div>
 	</div>
 	<div class="col span_2 colrank">
@@ -51,20 +51,20 @@
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
-				<span class="nicknamemin">davidluiz</span>
+				<span class="nicknamemin"></span>
 			</div>
-			<div class="likesmural">
-				12345 Likes
+			<div class="likesmural none like1">
+			
 			</div>
 
 		<div class="number numbermid">#4</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
-				<span class="nicknamemin">davidluiz</span>
+				<span class="nicknamemin"></span>
 			</div>
-			<div class="likesmural">
-				12345 Likes
+			<div class="likesmural none like2">
+		
 			</div>
 	</div>
 	<div class="col span_2 colrank">
@@ -72,20 +72,20 @@
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
-				<span class="nicknamemin">davidluiz</span>
+				<span class="nicknamemin"></span>
 			</div>
-			<div class="likesmural">
-				12345 Likes
+			<div class="likesmural none like3">
+	
 			</div>
 
 		<div class="number numbermid">#5</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
-				<span class="nicknamemin">davidluiz</span>
+				<span class="nicknamemin"></span>
 			</div>
-			<div class="likesmural">
-				12345 Likes
+			<div class="likesmural none like4">
+		
 			</div>
 	</div>
 
@@ -117,7 +117,7 @@
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>
-			<script>
+		<script type="text/javascript">
 			$('.responsivemenu').click(function(){
 				if($('.submenu').hasClass('block')){
 					$('.submenu').removeClass('block');
@@ -127,64 +127,76 @@
 				}
 			});
 
-		</script>
 
-	<!-- Script that loads instagram pictures -->
-	<script type="text/javascript">
-
-	var settings = {
+			var settings = {
 				hashtags: "copagram",
 				client_id: "a2b4e3e7da704010a5d87416baec426e",
 				images_to_fetch: 5,
 				fetch_time: 150,
 				display_time: 150
-		}
+			}
 
-		function loadPics()
-		{
-			$.ajax({
+			function loadPics()
+			{
 				$.ajax({
-					type: 'GET',
-					dataType: 'jsonp',
-					url: "https://api.instagram.com/v1/tags/" + settings.hashtags + "/media/recent",
-					data: {
-						access_token: null,
-						client_id: settings.client_id,
-						count: settings.images_to_fetch
-					},
-					success: function(dados) {
+					$.ajax({
+						type: 'GET',
+						dataType: 'jsonp',
+						url: "https://api.instagram.com/v1/tags/" + settings.hashtags + "/media/recent",
+						data: {
+							access_token: null,
+							client_id: settings.client_id,
+							count: settings.images_to_fetch
+						},
+						success: function(dados) {
 
-						var fotos = dados.data;
-						var maior = [0, 0, 0, 0, 0];
+							var fotos = dados.data;
+							var maior = [0, 0, 0, 0, 0];
 
-						var imgs = new Array();
+							var imgs = new Array();
 
-						for (var i = 0; i < settings.images_to_fetch; i++) {
-							
-							var img = foto.images.standard_resolution.url;
-							var like = foto.likes.count;
-							var user = foto.user.username;
-							var link = foto.link;
+							for (var i = 0; i < settings.images_to_fetch; i++) {
+								
+								var img = foto.images.standard_resolution.url;
+								var like = foto.likes.count;
+								var user = foto.user.username;
+								var link = foto.link;
 
 
-							for(int i = 0; i < maior.length;i++){
+								for(int i = 0; i < maior.length;i++){
 
-								if(likes > maior[i])
-								{
-									maior.push(likes);
+									if(likes > maior[i])
+									{
+										maior.push(likes);
 
-									
+										var id     = "#"+ i;
+										var nick   = '.nm'+ i;
+										var	url    = '.url'+i;
+										var Nlikes = '.like'+i; 
+
+					    				
+					    				$(id).attr('src', img);
+					    				$(nick).text(user);
+					    				$(Nlikes).text(like + " Likes");
+					    				$(url).prop('href', link);
+					    				$(url).attr('target','_blank');
+
+									}
 								}
 							}
+
+
 						}
-
-
-					}
-			});
+				});
+			}
 		}
-	}
+
+		$(document).ready(function(){
+			loadPics();
+		});
 
 	</script>
+
 
 </body>
 </html>
