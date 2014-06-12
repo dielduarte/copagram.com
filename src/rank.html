@@ -39,7 +39,7 @@
 		<div class="number yellow">#1</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg bigheight">
 		<div class="nick">
-			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;">
+			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;" id="0">
 			<span class="nickname"></span>
 		</div>
 		<div class="likesmural none like0">
@@ -50,7 +50,7 @@
 		<div class="number numbermid">#2</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="1">
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like1">
@@ -60,7 +60,7 @@
 		<div class="number numbermid">#4</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="2">
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like2">
@@ -71,7 +71,7 @@
 		<div class="number numbermid">#3</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="3">
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like3">
@@ -81,7 +81,7 @@
 		<div class="number numbermid">#5</div>
 		<img src="img/teste.jpg" alt="" class="defaultimg">
 			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" id="4">
 				<span class="nicknamemin"></span>
 			</div>
 			<div class="likesmural none like4">
@@ -133,6 +133,7 @@
 
 
 	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="http://code.stephenmorley.org/javascript/queues/Queue.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>
 		<script type="text/javascript">
@@ -147,12 +148,14 @@
 
 
 			var settings = {
-				hashtags: "copagram",
+				hashtags: "bacon",
 				client_id: "a2b4e3e7da704010a5d87416baec426e",
 				images_to_fetch: 5,
 				fetch_time: 150,
 				display_time: 150
 			}
+
+			var imgs = new Array();
 
 			function loadPics()
 			{
@@ -169,9 +172,6 @@
 						success: function(dados) {
 
 							var fotos = dados.data;
-							var maior = [0, 0, 0, 0, 0];
-
-							var imgs = new Array();
 
 							for (var i = 0; i < settings.images_to_fetch; i++) {
 								
@@ -180,37 +180,74 @@
 								var user = foto.user.username;
 								var link = foto.link;
 
-
-								for(int i = 0; i < maior.length;i++){
-
-									if(likes > maior[i])
-									{
-										maior.push(likes);
-
-										var id     = "#"+ i;
-										var nick   = '.nm'+ i;
-										var	url    = '.url'+i;
-										var Nlikes = '.like'+i; 
-
-					    				
-					    				$(id).attr('src', img);
-					    				$(nick).text(user);
-					    				$(Nlikes).text(like + " Likes");
-					    				$(url).prop('href', link);
-					    				$(url).attr('target','_blank');
-
-									}
-								}
+								imgs.push({img: img, user: user, like: like, link: link});
 							}
-
-
-						}
+					}
 				});
+
+				setTimeout(function() {
+			        loadPics();
+			    }, settings.fetch_time * 1000);
+		}
+		
+
+		function order(vet){
+
+			var auxLink;
+			var auxImg;
+			var auxLike;
+			var auxUser;
+
+			for (var i = 0; i < vet.length - 1; i++) {
+				
+				if (vet[i].like < a[i+1].like) {
+                
+                auxLink = vet[i].link;
+                auxUser = vet[i].user;
+                auxLike = vet[i].like;
+                auxImg = vet[i].img;
+
+                vet[i].link = vet[i+1].link;
+                vet[i].user = vet[i+1].user
+				vet[i].like = vet[i+1].like;
+				vet[i].img = vet[i+1].img;
+
+                vet[i+1].link = auxLink;
+                vet[i+1].user = auxUser;
+                vet[i+1].like = auxLike;
+                vet[i+1].img = auxImg;
+			}
+		}
+
+
+		function showPics(){
+			
+			order(imgs);
+
+			for (var i = 0; i < imgs.length; i++) {
+				alert(imgs[i].like);
+			};
+
+			for(var i = 0; i < 5; i++){
+
+			var id     = "#"+ i;
+			var nick   = '.nm'+ i;
+			var	url    = '.url'+i;
+			var Nlikes = '.like'+i; 
+
+				    				
+			$(id).attr('src', imgs[i].img);
+			$(nick).text(imgs[i].user);
+			$(Nlikes).text(imgs[i].like + " Likes");
+			$(url).prop('href', imgs[i].link);
+			$(url).attr('target','_blank');
+
 			}
 		}
 
 		$(document).ready(function(){
 			loadPics();
+			showPics();
 		});
 
 	</script>
