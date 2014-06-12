@@ -34,60 +34,68 @@
 				</ul>
 		</div>
 	</div>
-
+	
+	<a class="url0" href="#">
 	<div class="col span_4 colrank colrankleft">
 		<div class="number yellow">#1</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg bigheight" id="0">
+		<img src="img/banner.png" alt="" class="defaultimg bigheight" id="0">
 		<div class="nick">
 			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;" >
-			<span class="nickname"></span>
+			<span class="nickname nm0"></span>
 		</div>
 		<div class="likesmural none like0">
 			
 		</div>
 	</div>
+	</a>
+
+	<a class="url1" href="#">
 	<div class="col span_2 colrank">
 		<div class="number numbermid">#2</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg" id="1">
+		<img src="img/banner.png" alt="" class="defaultimg" id="1">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
-				<span class="nicknamemin"></span>
+				<span class="nicknamemin nm1" ></span>
 			</div>
 			<div class="likesmural none like1">
 			
 			</div>
 
 		<div class="number numbermid">#4</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg" id="2">
+		<img src="img/banner.png" alt="" class="defaultimg" id="2">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
-				<span class="nicknamemin"></span>
+				<span class="nicknamemin nm2"></span>
 			</div>
 			<div class="likesmural none like2">
 		
 			</div>
 	</div>
+
+	<a class="url3" href="#">
 	<div class="col span_2 colrank">
 		<div class="number numbermid">#3</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg" id="3">
+		<img src="img/banner.png" alt="" class="defaultimg" id="3">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
-				<span class="nicknamemin"></span>
+				<span class="nicknamemin nm3"></span>
 			</div>
 			<div class="likesmural none like3">
 	
 			</div>
-
+	</a>
+	<a class="url4" href="#">
 		<div class="number numbermid">#5</div>
-		<img src="img/teste.jpg" alt="" class="defaultimg" id="4">
+		<img src="img/banner.png" alt="" class="defaultimg" id="4">
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
-				<span class="nicknamemin"></span>
+				<span class="nicknamemin nm4"></span>
 			</div>
 			<div class="likesmural none like4">
 		
 			</div>
 	</div>
+</a>
 
 	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	<div class="aboutmodal">
@@ -149,7 +157,7 @@
 
 
 			var settings = {
-				hashtags: "bacon",
+				hashtags: "copagram",
 				client_id: "a2b4e3e7da704010a5d87416baec426e",
 				images_to_fetch: 5,
 				fetch_time: 150,
@@ -187,9 +195,9 @@
 								imgs.push({img: img, user: user, like: like, link: link});
 							}
 
-							order(imgs);
+							//order(imgs);
 
-							for(var i = 5; i > 0; i--){
+							for(var i = 0; i < 5; i++){
 
 								var id     = "#"+ i;
 								var nick   = '.nm'+ i;
@@ -212,40 +220,6 @@
 			        loadPics();
 			    }, settings.fetch_time * 1000);
 		}
-		
-
-		function order(vet){
-
-			var auxLink;
-			var auxImg;
-			var auxLike;
-			var auxUser;
-
-			for (var i = 0; i < vet.length - 1; i++) {
-				
-				if (vet[i].like > vet[i+1].like) {
-                
-                auxLink = vet[i].link;
-                auxUser = vet[i].user;
-                auxLike = vet[i].like;
-                auxImg = vet[i].img;
-
-                vet[i].link = vet[i+1].link;
-                vet[i].user = vet[i+1].user
-				vet[i].like = vet[i+1].like;
-				vet[i].img = vet[i+1].img;
-
-                vet[i+1].link = auxLink;
-                vet[i+1].user = auxUser;
-                vet[i+1].like = auxLike;
-                vet[i+1].img = auxImg;
-			}
-		}
-
-		for(var i = 0; i < vet.length;i++){
-			alert(vet[i].like);
-		}
-	}
 
 
 		$(document).ready(function(){
