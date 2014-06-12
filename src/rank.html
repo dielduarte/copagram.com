@@ -129,6 +129,62 @@
 
 		</script>
 
+	<!-- Script that loads instagram pictures -->
+	<script type="text/javascript">
+
+	var settings = {
+				hashtags: "copagram",
+				client_id: "a2b4e3e7da704010a5d87416baec426e",
+				images_to_fetch: 5,
+				fetch_time: 150,
+				display_time: 150
+		}
+
+		function loadPics()
+		{
+			$.ajax({
+				$.ajax({
+					type: 'GET',
+					dataType: 'jsonp',
+					url: "https://api.instagram.com/v1/tags/" + settings.hashtags + "/media/recent",
+					data: {
+						access_token: null,
+						client_id: settings.client_id,
+						count: settings.images_to_fetch
+					},
+					success: function(dados) {
+
+						var fotos = dados.data;
+						var maior = [0, 0, 0, 0, 0];
+
+						var imgs = new Array();
+
+						for (var i = 0; i < settings.images_to_fetch; i++) {
+							
+							var img = foto.images.standard_resolution.url;
+							var like = foto.likes.count;
+							var user = foto.user.username;
+							var link = foto.link;
+
+
+							for(int i = 0; i < maior.length;i++){
+
+								if(likes > maior[i])
+								{
+									maior.push(likes);
+
+									
+								}
+							}
+						}
+
+
+					}
+			});
+		}
+	}
+
+	</script>
 
 </body>
 </html>
