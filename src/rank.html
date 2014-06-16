@@ -44,7 +44,7 @@
 			<span class="nickname nm0"></span>
 		</div>
 		<div class="likesmural none like0">
-			
+		
 		</div>
 	</div>
 	</a>
@@ -68,7 +68,7 @@
 				<span class="nicknamemin nm2"></span>
 			</div>
 			<div class="likesmural none like2">
-		
+				
 			</div>
 	</div>
 
@@ -81,7 +81,7 @@
 				<span class="nicknamemin nm3"></span>
 			</div>
 			<div class="likesmural none like3">
-	
+				
 			</div>
 	</a>
 	<a class="url4" href="#">
@@ -92,7 +92,7 @@
 				<span class="nicknamemin nm4"></span>
 			</div>
 			<div class="likesmural none like4">
-		
+				
 			</div>
 	</div>
 </a>
@@ -165,7 +165,6 @@
 			}
 
 			var imgs = new Array();
-			var newimg = new Array();
 
 			function loadPics()
 			{
@@ -193,9 +192,12 @@
 								var link = foto.link;
 
 								imgs.push({img: img, user: user, like: like, link: link});
+
 							}
 
-							//order(imgs);
+							
+							imgs.sort(function(a, b){return b.like-a.like});
+
 
 							for(var i = 0; i < 5; i++){
 
@@ -204,7 +206,7 @@
 								var	url    = '.url'+i;
 								var Nlikes = '.like'+i; 
 
-								
+								alert(imgs[i].like);
 									    				
 								$(id).attr('src', imgs[i].img);
 								$(nick).text(imgs[i].user);
