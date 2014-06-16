@@ -30,6 +30,21 @@ gulp.task('concatcss', function() {
 });
 
 
+// Task for minifier the *.js files 
+gulp.task('minifyjs',function(){
+    gulp.src('./src/js/*.js')
+    .pipe(jsmin())
+    .pipe(gulp.dest('./www/js/'))
+});
+
+// Task for concat the *.js files
+gulp.task('concatjs', function() {
+  gulp.src('./www/js/*.js')
+    .pipe(concat('main.min.js'))
+    .pipe(gulp.dest('./www/js/'))
+});
+
+
 // Taks default gulp! 
 gulp.task('default',function(){
     gulp.run('imagemin');

@@ -446,6 +446,10 @@ a , a:hover{
 
 	.nicknamemin {
 		font-size: 15px;
+		display: inline-block;
+		max-width: 100px;
+		overflow: hidden;
+		margin-bottom: -4px;
 	}
 
 	.likesmural {
