@@ -6,9 +6,33 @@
 
 	<!-- CSS IMPORT-->
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/2.1.3/normalize.min.css">
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<!--<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/responsive.16col.css">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">-->
+
+	<link rel="stylesheet" href="css/main.css">
+
+	<!---meta tag view port-->
+	<meta name="viewport" content="width=device-width">
+
+
+	<!--meta tag facebook-->
+	<meta property="og:locale" content="en">
+	<meta property="og:url" content="http://www.copagram.com">
+	<meta property="og:title" content="Copagram, compartilhe sua copa.">
+	<meta property="og:site_name" content="Copagram">
+	<meta property="og:description" content="Mural de fotos online da copa do mundo! Copagram, compartilhe sua copa.">
+	<meta property="og:image" content="www.copagram.com/img/banner.png">
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="800"> 
+	<meta property="og:image:height" content="600"> 
+	<meta property="og:type" content="website">
+
+
+	<!--meta tag google-->
+	<meta name="description" content="Copagram, mural de fotos online da copa do mundo 2014, poste suas fotos com hastag #copadomundo2014 ou #wordcup2014 e #copagram e apareça em nosso mural!" />
+	<meta name="keywords" content="instagram, copa do mundo,word cup,copagram, mural de fotos,diel duarte, marcio mansur, giovanne alberique"/>
+	<meta name="robots" content="index, follow">
 </head>
 <body>
 
@@ -35,67 +59,66 @@
 		</div>
 	</div>
 	
-	<a class="url0" href="#">
+	
 	<div class="col span_4 colrank colrankleft">
 		<div class="number yellow">#1</div>
-		<img src="img/banner.png" alt="" class="defaultimg bigheight" id="0">
+		<a class="url0" href="#"><img src="img/banner.png" alt="" class="defaultimg bigheight" id="0"></a>
 		<div class="nick">
 			<img src="img/instagram.png" alt="" style="width:24px;height:24px;margin-top:-5px;" >
 			<span class="nickname nm0"></span>
 		</div>
-		<div class="likesmural none like0">
+		<div class="likesmural  like0">
 		
 		</div>
 	</div>
-	</a>
+	
 
-	<a class="url1" href="#">
+	
 	<div class="col span_2 colrank">
 		<div class="number numbermid">#2</div>
-		<img src="img/banner.png" alt="" class="defaultimg" id="1">
+		<a class="url1" href="#"><img src="img/banner.png" alt="" class="defaultimg" id="1"></a>
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin nm1" ></span>
 			</div>
-			<div class="likesmural none like1">
+			<div class="likesmural  like1">
 			
 			</div>
-
-		<div class="number numbermid">#4</div>
-		<img src="img/banner.png" alt="" class="defaultimg" id="2">
-			<div class="nickmural">
-				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
-				<span class="nicknamemin nm2"></span>
-			</div>
-			<div class="likesmural none like2">
-				
-			</div>
-	</div>
-
-	<a class="url3" href="#">
-	<div class="col span_2 colrank">
 		<div class="number numbermid">#3</div>
-		<img src="img/banner.png" alt="" class="defaultimg" id="3">
+		
+	      <a class="url3" href="#"><img src="img/banner.png" alt="" class="defaultimg" id="3"></a>
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin nm3"></span>
 			</div>
-			<div class="likesmural none like3">
+			<div class="likesmural  like3">
 				
 			</div>
-	</a>
-	<a class="url4" href="#">
+
+	</div>
+
+	<div class="col span_2 colrank">
+		<div class="number numbermid">#4</div>
+		<a class="url2" href="#"><img src="img/banner.png" alt="" class="defaultimg" id="2"></a>
+			<div class="nickmural">
+				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
+				<span class="nicknamemin nm2"></span>
+			</div>
+			<div class="likesmural  like2">
+				
+			</div>
+	
 		<div class="number numbermid">#5</div>
-		<img src="img/banner.png" alt="" class="defaultimg" id="4">
+		<a class="url4" href="#"><img src="img/banner.png" alt="" class="defaultimg" id="4"></a>
 			<div class="nickmural">
 				<img src="img/instagram.png" alt="" style="width:12px;height:12px;" >
 				<span class="nicknamemin nm4"></span>
 			</div>
-			<div class="likesmural none like4">
+			<div class="likesmural  like4">
 				
 			</div>
 	</div>
-</a>
+
 
 	<div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	 	<div class="aboutmodal">
@@ -144,6 +167,7 @@
 	<script src="http://code.stephenmorley.org/javascript/queues/Queue.js"></script>
 	<script src="js/bootstrap.min.js"></script>
 	<script src="js/respond.min.js"></script>
+	<script src="js/ranking.min.js"></script>
 		<script type="text/javascript">
 
 			$('.responsivemenu').click(function(){
@@ -154,77 +178,6 @@
 					$('.submenu').addClass('block')
 				}
 			});
-
-
-			var settings = {
-				hashtags: "copagram",
-				client_id: "a2b4e3e7da704010a5d87416baec426e",
-				images_to_fetch: 5,
-				fetch_time: 150,
-				display_time: 150
-			}
-
-			var imgs = new Array();
-
-			function loadPics()
-			{
-				
-					$.ajax({
-						type: 'GET',
-						dataType: 'jsonp',
-						url: "https://api.instagram.com/v1/tags/" + settings.hashtags + "/media/recent",
-						data: {
-							access_token: null,
-							client_id: settings.client_id,
-							count: 200
-						},
-						success: function(dados) {
-
-							var fotos = dados.data;
-
-							for (var i = 0; i < fotos.length; i++) {
-								
-								var foto = fotos[i];
-
-								var img = foto.images.standard_resolution.url;
-								var like = foto.likes.count;
-								var user = foto.user.username;
-								var link = foto.link;
-
-								imgs.push({img: img, user: user, like: like, link: link});
-
-							}
-
-							
-							imgs.sort(function(a, b){return b.like-a.like});
-
-
-							for(var i = 0; i < 5; i++){
-
-								var id     = "#"+ i;
-								var nick   = '.nm'+ i;
-								var	url    = '.url'+i;
-								var Nlikes = '.like'+i; 
-									    				
-								$(id).attr('src', imgs[i].img);
-								$(nick).text(imgs[i].user);
-								$(Nlikes).text(imgs[i].like + " Likes");
-								$(url).prop('href', imgs[i].link);
-								$(url).attr('target','_blank');
-
-							}
-						}
-				});
-
-				setTimeout(function() {
-			        loadPics();
-			    }, settings.fetch_time * 1000);
-		}
-
-
-		$(document).ready(function(){
-			loadPics();
-		});
 
 	</script>
 
