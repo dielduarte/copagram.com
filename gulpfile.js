@@ -7,27 +7,30 @@ var rename = require('gulp-rename');
 
 // Task for minifier the *.png images
 gulp.task('imagemin',function () {
-	gulp.src('./img/*.*')
+	gulp.src('./src/img/*.*')
 	.pipe(imagemin(opts))
-	.pipe(gulp.dest('./img/'))
+	.pipe(gulp.dest('./www/img/'))
 });
 
-// Taks default gulp! 
-gulp.task('default',function(){
-	gulp.run('imagemin');
-});
+
 
 
 // Task for minifier the *.css files 
 gulp.task('minifycss', function() {
     gulp.src('./src/css/*.css')
     .pipe(minifyCSS(opts))
-    .pipe(gulp.dest('./src/css/'))
+    .pipe(gulp.dest('./www/css/'))
 });
 
 // Task for concat the *.css files 
 gulp.task('concatcss', function() {
-  gulp.src('./src/css/*.css')
+  gulp.src('./www/css/*.css')
     .pipe(concat('main.min.css'))
     .pipe(gulp.dest('./www/css/'))
+});
+
+
+// Taks default gulp! 
+gulp.task('default',function(){
+    gulp.run('imagemin');
 });
